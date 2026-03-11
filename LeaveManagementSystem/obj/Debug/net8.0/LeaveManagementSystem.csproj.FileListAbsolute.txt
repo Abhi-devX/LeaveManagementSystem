@@ -144,3 +144,4 @@ C:\Tech_Exactly\LeaveManagementSystem\LeaveManagementSystem\obj\Debug\net8.0\ref
 C:\Tech_Exactly\LeaveManagementSystem\LeaveManagementSystem\obj\Debug\net8.0\LeaveManagementSystem.pdb
 C:\Tech_Exactly\LeaveManagementSystem\LeaveManagementSystem\obj\Debug\net8.0\LeaveManagementSystem.genruntimeconfig.cache
 C:\Tech_Exactly\LeaveManagementSystem\LeaveManagementSystem\obj\Debug\net8.0\ref\LeaveManagementSystem.dll
+C:\Tech_Exactly\LeaveManagementSystem\LeaveManagementSystem\obj\Debug\net8.0\LeaveManagementSystem.sourcelink.json
