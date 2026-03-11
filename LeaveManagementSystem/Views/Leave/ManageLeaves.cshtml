@@ -1,0 +1,45 @@
+﻿@model List<LeaveRequest>
+
+<h2>Manage Leaves</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Employee</th>
+        <th>From Date</th>
+        <th>To Date</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Employee.Name</td>
+
+            <td>@item.FromDate.ToShortDateString()</td>
+
+            <td>@item.ToDate.ToShortDateString()</td>
+
+            <td>@item.Reason</td>
+
+            <td>@item.Status</td>
+
+            <td>
+
+                <a href="/Leave/Approve/@item.Id" class="btn btn-success btn-sm">
+                    Approve
+                </a>
+
+                <a href="/Leave/Reject/@item.Id" class="btn btn-danger btn-sm">
+                    Reject
+                </a>
+
+            </td>
+
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,66 @@
+﻿@model List<Employee>
+
+<h2>Employees</h2>
+
+<form method="get">
+
+    <input type="text"
+           name="search"
+           placeholder="Search by Name or Department"
+           class="form-control"
+           style="width:300px;display:inline;" />
+
+    <button type="submit" class="btn btn-primary">
+        Search
+    </button>
+
+    <a href="/Employee/Create" class="btn btn-success">
+        Add Employee
+    </a>
+
+</form>
+
+<br />
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Name</td>
+
+            <td>@item.Email</td>
+
+            <td>@item.Department</td>
+
+            <td>
+                @(item.IsActive ? "Active" : "Inactive")
+            </td>
+
+            <td>
+
+                <a href="/Employee/Edit/@item.Id"
+                   class="btn btn-warning btn-sm">
+                    Edit
+                </a>
+
+                <a href="/Employee/Deactivate/@item.Id"
+                   class="btn btn-danger btn-sm">
+                    Deactivate
+                </a>
+
+            </td>
+
+        </tr>
+    }
+
+</table>

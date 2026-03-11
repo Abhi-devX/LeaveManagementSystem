@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LeaveManagementSystem</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <style>
+
+        body {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background: #343a40;
+            padding-top: 20px;
+        }
+
+            .sidebar a {
+                display: block;
+                color: white;
+                padding: 12px;
+                text-decoration: none;
+            }
+
+                .sidebar a:hover {
+                    background: #495057;
+                }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h4 class="text-white text-center">Leave System</h4>
+        <hr class="text-white">
+
+        @if (Context.Session.GetString("Role") == "Admin")
+        {
+
+            <a href="/Dashboard/AdminDashboard">Dashboard</a>
+
+            <a href="/Employee/Index">Employees</a>
+
+            <a href="/Leave/ManageLeaves">Manage Leaves</a>
+
+        }
+
+        @if (Context.Session.GetString("Role") == "Employee")
+        {
+
+            <a href="/Dashboard/EmployeeDashboard">Dashboard</a>
+
+            <a href="/Leave/MyLeaves">My Leaves</a>
+
+            <a href="/Leave/Apply">Apply Leave</a>
+
+        }
+
+        <a href="/Auth/Logout" class="text-danger">Logout</a>
+
+    </div>
+
+    <div class="content">
+
+        @RenderBody()
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

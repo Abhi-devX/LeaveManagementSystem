@@ -1,0 +1,26 @@
+﻿@model List<LeaveRequest>
+
+<h2>My Leaves</h2>
+
+<a href="/Leave/Apply" class="btn btn-success">Apply Leave</a>
+
+<table class="table">
+
+    <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Reason</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FromDate.ToShortDateString()</td>
+            <td>@item.ToDate.ToShortDateString()</td>
+            <td>@item.Reason</td>
+            <td>@item.Status</td>
+        </tr>
+    }
+
+</table>
